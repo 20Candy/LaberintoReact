@@ -84,7 +84,6 @@ function App(){
 	const Button = styled.button`
  	 color: #725c95;
 	`
-
 	if (loading) return <Spinner />;
 
 	return(
