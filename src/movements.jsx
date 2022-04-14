@@ -18,7 +18,7 @@ function Movements(array, movimiento) {
 		if(temp != "-" &&  temp != "+" &&  temp != "|" ){
 	
 			if(temp == "g"){
-	
+				array[fila] = array[fila].reemplazar(pos, " ")
 				alert("You Win!")
 	
 			}else{
@@ -44,6 +44,7 @@ function Movements(array, movimiento) {
 		if(temp != "-" &&  temp != "+" &&  temp != "|" ){
 	
 			if(temp == "g"){
+				array[fila] = array[fila].reemplazar(pos, " ")
 				alert("You Win!")
 	
 			}else{
@@ -70,6 +71,7 @@ function Movements(array, movimiento) {
 		if(temp != "-" &&  temp != "+" &&  temp != "|" ){
 	
 			if(temp == "g"){
+				array[fila] = array[fila].reemplazar(pos, " ")
 				alert("You Win!")
 			}else{
 	
@@ -95,6 +97,7 @@ function Movements(array, movimiento) {
 		if(temp != "-" &&  temp != "+" &&  temp != "|" ){
 	
 			if(temp == "g"){
+				array[fila] = array[fila].reemplazar(pos, " ")
 				alert("You Win!")
 			}else{
 	

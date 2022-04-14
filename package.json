@@ -12,6 +12,9 @@
   "dependencies": {
     "@babel/core": "^7.17.9",
     "@babel/preset-react": "^7.16.7",
+    "@emotion/css": "^11.9.0",
+    "@emotion/react": "^11.9.0",
+    "@emotion/styled": "^11.8.1",
     "babel": "^6.23.0",
     "babel-loader": "^8.2.4",
     "babel-preset-env": "^1.7.0",
