@@ -37,16 +37,19 @@ div{
 
 audio::-webkit-media-controls-panel {
     background-color:  #0876b1;
-    text-align: center;
 
 }
 
 .container{
     background-color: aliceblue;
     opacity: 0.5;
+    margin: auto;
+    text-align: center;
+
 }
 
 .button{
   background-color:  #0876b1;
   color: white;
+  margin-bottom: 10px;
 } 
