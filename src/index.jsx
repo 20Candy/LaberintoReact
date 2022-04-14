@@ -82,7 +82,7 @@ function App(){
 	console.log(laberinto)
 
 	const Button = styled.button`
- 	 color: blue;
+ 	 color: #725c95;
 	`
 
 	if (loading) return <Spinner />;
