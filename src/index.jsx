@@ -61,10 +61,10 @@ function App(){
 	return(
         <div className="App">
             <div className="bottom">
-                <h1>Laberinto de Ori</h1>
+                <h1>Ori's Maze</h1>
 				<input type="number" id="w" name="w" defaultValue={wTemp} min="2" max="10" onChange={e => setWtemp(e.target.value)} />
                 <input type="number" id="h" name="h" defaultValue={hTemp} min="2" max="10" onChange={e => setHtemp(e.target.value)} />
-                <button className="button" onClick={(Maze)}>"NEW GAME"</button>
+                <button className="button" onClick={(Maze)}>NEW GAME</button>
             </div>
 
 			<Page laberinto={laberinto}/>   
