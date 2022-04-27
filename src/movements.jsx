@@ -1,121 +1,78 @@
-function Movements(array, movimiento) {
-	let fila =0
-	let pos =0
-	let temp =0
-	
-    for (let i = 0; i < array.length; i++) {
+function Movements(Marray, movimiento) {
+  const array = Marray
+  let fila = 0
+  let pos = 0
+  let temp = 0
 
-        if(array[i].includes("p")){
-            pos = array[i].indexOf("p")
-            fila = i
-        }
+  function replaceAt(string, index, replacement) {
+    return string.substr(0, index) + replacement + string.substr(index + replacement.length)
+  }
+
+  for (let i = 0; i < array.length; i += 1) {
+    if (array[i].includes('p')) {
+      pos = array[i].indexOf('p')
+      fila = i
     }
+  }
 
-    if(movimiento == "UP"){
-	
-		temp = array[fila -1][pos]
-	
-		if(temp != "-" &&  temp != "+" &&  temp != "|" ){
-	
-			if(temp == "g"){
-				array[fila] = array[fila].reemplazar(pos, " ")
-				alert("You Win!")
-	
-			}else{
-	
-				String.prototype.reemplazar=function(index, replacement) {
-					return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
-				}
-				
-				array[fila-1] = array[fila-1].reemplazar(pos, "p")
-				array[fila] = array[fila].reemplazar(pos, " ")
-			}
-			
-		}else{
-			alert("Auch! A Wall!")
-		}
-	
-	}
-	
-	else if(movimiento == "DOWN"){
+  if (movimiento === 'UP') {
+    temp = array[fila - 1][pos]
+    if (temp !== '-' && temp !== '+' && temp !== '|') {
+      if (temp === 'g') {
+        array[fila] = replaceAt(array[fila], pos, ' ')
+        alert('You Win!')
+      } else {
+        array[fila - 1] = replaceAt(array[fila - 1], pos, 'p')
+        array[fila] = replaceAt(array[fila], pos, ' ')
+      }
+    } else {
+      alert('Auch! A Wall!')
+    }
+  } else if (movimiento === 'DOWN') {
+    temp = array[fila + 1][pos]
 
-		temp = array[fila +1][pos]
-	
-		if(temp != "-" &&  temp != "+" &&  temp != "|" ){
-	
-			if(temp == "g"){
-				array[fila] = array[fila].reemplazar(pos, " ")
-				alert("You Win!")
-	
-			}else{
-	
-				String.prototype.reemplazar=function(index, replacement) {
-					return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
-				}
-				
-				array[fila+1] = array[fila+1].reemplazar(pos, "p")
-				array[fila] = array[fila].reemplazar(pos, " ")
-			}
-			
-		}else{
-			alert("Auch! A Wall!")
-		}
+    if (temp !== '-' && temp !== '+' && temp !== '|') {
+      if (temp === 'g') {
+        array[fila] = replaceAt(array[fila], pos, ' ')
+        alert('You Win!')
+      } else {
+        array[fila - 1] = replaceAt(array[fila + 1], pos, 'p')
+        array[fila] = replaceAt(array[fila], pos, ' ')
+      }
+    } else {
+      alert('Auch! A Wall!')
+    }
+  } else if (movimiento === 'LEFT') {
+    temp = array[fila][pos - 1]
 
-	}
+    if (temp !== '-' && temp !== '+' && temp !== '|') {
+      if (temp === 'g') {
+        array[fila] = replaceAt(array[fila], pos, ' ')
+        alert('You Win!')
+      } else {
+        array[fila] = replaceAt(array[fila], pos - 1, 'p')
+        array[fila] = replaceAt(array[fila], pos, ' ')
+      }
+    } else {
+      alert('Auch! A Wall!')
+    }
+  } else if (movimiento === 'RIGHT') {
+    temp = array[fila][pos + 1]
 
-	
-	else if(movimiento == "LEFT"){
-	
-		let temp = array[fila][pos-1]
-	
-		if(temp != "-" &&  temp != "+" &&  temp != "|" ){
-	
-			if(temp == "g"){
-				array[fila] = array[fila].reemplazar(pos, " ")
-				alert("You Win!")
-			}else{
-	
-				String.prototype.reemplazar=function(index, replacement) {
-					return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
-				}
-				
-				array[fila] = array[fila].reemplazar(pos-1, "p")
-				array[fila] = array[fila].reemplazar(pos, " ")
-			}
-			
-		}else{
-			alert("Auch! A Wall!")
-		}
-		
-	}
-	
-	else if(movimiento  == "RIGHT"){
+    if (temp !== '-' && temp !== '+' && temp !== '|') {
+      if (temp === 'g') {
+        array[fila] = replaceAt(array[fila], pos, ' ')
+        alert('You Win!')
+      } else {
+        array[fila] = replaceAt(array[fila], pos + 1, 'p')
+        array[fila] = replaceAt(array[fila], pos, ' ')
+      }
+    } else {
+      alert('Auch! A Wall!')
+    }
+  }
 
-		let temp = array[fila][pos+1]
-	
-	
-		if(temp != "-" &&  temp != "+" &&  temp != "|" ){
-	
-			if(temp == "g"){
-				array[fila] = array[fila].reemplazar(pos, " ")
-				alert("You Win!")
-			}else{
-	
-				String.prototype.reemplazar=function(index, replacement) {
-					return this.substr(0, index) + replacement+ this.substr(index + replacement.length);
-				}
-				
-				array[fila] = array[fila].reemplazar(pos+1, "p")
-				array[fila] = array[fila].reemplazar(pos, " ")
-			}
-			
-		}else{
-			alert("Auch! A Wall!")
-		}
-	}
-
-    return array
-
+  return array
 }
 
-export default Movements;
+export default Movements
